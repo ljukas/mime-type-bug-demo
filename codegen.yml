@@ -1,0 +1,14 @@
+overwrite: true
+schema: 'https://localhost:8082/parent-ql'
+documents: null
+generates:
+  src/types/graphql.ts:
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+    config:
+      useIndexSignature: true
+      maybeValue: T | undefined
